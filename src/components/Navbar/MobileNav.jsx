@@ -14,7 +14,7 @@ const MobileNav = () => {
   ];
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-white shadow-md md:hidden z-10  bg-[linear-gradient(90deg,#e3ffe7_0%,#d9e7ff_100%)] ">
+    <footer className="fixed bottom-0 left-0 w-full bg-white shadow-md md:hidden z-10  bg-[linear-gradient(90deg,#e3ffe7_0%,#d9e7ff_100%)]">
       <div className="flex justify-around py-3 ">
         {footerLinks.map((value, index) => {
           return (
