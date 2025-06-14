@@ -1,0 +1,55 @@
+"use client";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Skills", path: "/skills" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const handleClick = (path) => {
+    setIsOpen(false);
+    router.push(path);
+  };
+
+  return (
+    <nav className="bg-wite shadow-md top-0 z-50 rounded-md sticky">
+      <div className="max-w-7xl mx-auto px-4 py-2  md:justify-between items-center flex flex-row">
+        <Image
+          className="text-2xl p-2 rounded-md font-bold text-blue-800 cursor-pointer items-center w-20"
+          onClick={() => router.push("/")}
+          width={100}
+          height={100}
+          src="/logo.svg"
+          alt="Logo"
+          style={{
+            background: "linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)",
+          }}
+        />
+        <div className="hidden md:flex space-x-6">
+          {navLinks.map((value, index) => {
+            return (
+              <button
+                key={index}
+                className="text-gray-800 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+                onClick={() => handleClick(value.path)}
+              >
+                {value.name}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
