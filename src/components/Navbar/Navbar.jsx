@@ -21,18 +21,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-wite shadow-md top-0 z-50 rounded-md sticky">
+    <nav className="bg-wite shadow-md top-0 z-50 rounded-md sticky  bg-[linear-gradient(90deg,#e3ffe7_0%,#d9e7ff_100%)]">
       <div className="max-w-7xl mx-auto px-4 py-2  md:justify-between items-center flex flex-row">
         <Image
-          className="text-2xl p-2 rounded-md font-bold text-blue-800 cursor-pointer items-center w-20"
+          className="text-2xl p-2 border-1 border-blue-500 rounded-md  font-bold text-blue-800 cursor-pointer items-center w-20"
           onClick={() => router.push("/")}
           width={100}
           height={100}
           src="/logo.svg"
           alt="Logo"
-          style={{
-            background: "linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)",
-          }}
         />
         <div className="hidden md:flex space-x-6">
           {navLinks.map((value, index) => {
