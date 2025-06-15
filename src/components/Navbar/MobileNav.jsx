@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { Home, User, Code, Mail } from "lucide-react";
+import { Home, User, Code, Mail, FolderClosed } from "lucide-react";
 
 const MobileNav = () => {
   const router = useRouter();
@@ -9,7 +9,8 @@ const MobileNav = () => {
   const footerLinks = [
     { name: "Home", path: "/", icon: <Home size={20} /> },
     { name: "About", path: "/about", icon: <User size={20} /> },
-    { name: "Projects", path: "/projects", icon: <Code size={20} /> },
+    { name: "Projects", path: "/projects", icon: <FolderClosed size={20} /> },
+    { name: "Skills", path: "/skills", icon: <Code size={20} /> },
     { name: "Contact", path: "/contact", icon: <Mail size={20} /> },
   ];
 

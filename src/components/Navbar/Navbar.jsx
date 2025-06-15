@@ -3,16 +3,17 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Home, User, Code, Mail, FolderClosed } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
-    { name: "Skills", path: "/skills" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", icon: Home },
+    { name: "About", path: "/about", icon: User },
+    { name: "Projects", path: "/projects", icon: FolderClosed },
+    { name: "Skills", path: "/skills", icon: Code },
+    { name: "Contact", path: "/contact", icon: Mail },
   ];
 
   const handleClick = (path) => {
@@ -36,9 +37,10 @@ const Navbar = () => {
             return (
               <button
                 key={index}
-                className="text-gray-800 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+                className="text-gray-800 hover:text-blue-600 transition-colors duration-300 cursor-pointer flex flex-row gap-1"
                 onClick={() => handleClick(value.path)}
               >
+                <value.icon />
                 {value.name}
               </button>
             );

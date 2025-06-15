@@ -1,6 +1,6 @@
 import { FaBug, FaTools, FaReact, FaNodeJs } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { FaGitAlt } from "react-icons/fa6";
+import { FaGitAlt, FaHtml5, FaCss3 } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
   SiPostman,
@@ -13,6 +13,17 @@ import {
 import { VscVscode } from "react-icons/vsc";
 
 export const techStack = [
+  {
+    name: "HTML",
+    icon: <FaHtml5 color="#e34c26" />,
+    bg: "rgba(227, 76, 38, 0.125)", // or "#e34c261F"
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3 color="#264de4" />,
+    bg: "rgba(38, 77, 228, 0.125)", // or "#264de420"
+  },
+
   {
     name: "JavaScript",
     icon: <IoLogoJavascript size={20} color="#f7df1e" />,

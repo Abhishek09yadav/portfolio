@@ -1,0 +1,40 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* chrome */
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 6s;
+  }
+}
+
+/* @media (max-width: 480px) {
+  .animate-scroll {
+    animation-duration: 20s;
+  }
+} */
