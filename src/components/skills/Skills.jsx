@@ -5,7 +5,7 @@ import { Tooltip } from "primereact/tooltip";
 import { techStack, tools } from "./skillData";
 
 const Section = ({ title, items }) => {
-  const duplicatedItems = [...items, ...items,...items,...items]; // duplicate for infinite scroll
+  const duplicatedItems = [...items, ...items]; // duplicate for infinite scroll
   return (
     <div className="mb-8">
       <h2 className="text-xl font-semibold text-white mb-4 text-center">
