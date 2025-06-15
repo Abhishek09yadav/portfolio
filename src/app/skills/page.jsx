@@ -1,13 +1,12 @@
-import TechStack from '@/components/skills/Skills';
-
-import React from 'react'
+import Skills from "@/components/skills/Skills";
+import React from "react";
 
 const page = () => {
   return (
     <div className="relative flex-1">
-      <TechStack />
+      <Skills />
     </div>
   );
-}
+};
 
-export default page
+export default page;
