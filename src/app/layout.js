@@ -1,13 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Raleway } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer";
 import { PrimeReactProvider } from "primereact/api";
 import MobileNav from "@/components/Navbar/MobileNav";
+import StarParticles from "@/components/StarParticles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 const value = {
   appendTo: "self",
@@ -26,13 +32,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${raleway.variable} antialiased `}
+        // ${geistSans.variable} ${geistMono.variable
       >
         <PrimeReactProvider value={value}>
           <Navbar />
           <MobileNav />
+          <StarParticles />
           {children}
-          <Footer />
         </PrimeReactProvider>
       </body>
     </html>
