@@ -5,7 +5,14 @@ import Navbar from "@/components/Navbar/Navbar";
 import { PrimeReactProvider } from "primereact/api";
 import MobileNav from "@/components/Navbar/MobileNav";
 import StarParticles from "@/components/StarParticles";
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // choose weights you need
+  display: "swap",
+  variable: "--font-poppins", // optional if using CSS variable
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,8 +39,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${raleway.variable} antialiased `}
-        // ${geistSans.variable} ${geistMono.variable
+        className={`${poppins.className}  ${geistSans.variable} ${geistMono.variable} antialiased `}
+        // ${geistSans.variable} ${geistMono.variable}
       >
         <PrimeReactProvider value={value}>
           <Navbar />

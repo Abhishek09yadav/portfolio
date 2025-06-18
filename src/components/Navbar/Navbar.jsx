@@ -22,14 +22,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-wite shadow-md top-0 z-50 rounded-md sticky  bg-[linear-gradient(90deg,#e3ffe7_0%,#d9e7ff_100%)]">
+    <nav className="bg-wite shadow-md top-0 z-50  sticky  bg-[linear-gradient(90deg,#e3ffe7_0%,#d9e7ff_100%)]">
       <div className="max-w-7xl mx-auto px-4 py-2  md:justify-between items-center flex flex-row">
         <Image
-          className="text-2xl p-2 border-1 border-blue-500 rounded-md  font-bold text-blue-800 cursor-pointer items-center w-20"
+          className="text-2xl p-2 border-1 border-green-500 rounded-md  font-bold text-green-500 cursor-pointer items-center w-20"
           onClick={() => router.push("/")}
           width={100}
           height={100}
-          src="/logo.svg"
+          src="/logo/logo.svg"
           alt="Logo"
         />
         <div className="hidden md:flex space-x-6">
@@ -37,10 +37,10 @@ const Navbar = () => {
             return (
               <button
                 key={index}
-                className="text-gray-800 hover:text-blue-600 transition-colors duration-300 cursor-pointer flex flex-row gap-1"
+                className="text-gray-800 hover:text-green-500 transition-colors duration-300 cursor-pointer flex flex-row gap-1"
                 onClick={() => handleClick(value.path)}
               >
-                <value.icon />
+                {/* <value.icon /> */}
                 {value.name}
               </button>
             );
