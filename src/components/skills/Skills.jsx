@@ -11,16 +11,19 @@ const Section = ({ title, items }) => {
       <h2 className="text-xl font-semibold text-white mb-4 text-center">
         {title}
       </h2>
-      <div className="overflow-hidden max-w-xl mx-auto">
+      <div className="overflow-hidden mx-auto">
         <div className="animate-scroll gap-2">
           {duplicatedItems.map((value, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 px-3 py-2 rounded-md whitespace-nowrap"
+              className="flex items-center gap-2 px-10 py-8 rounded-md whitespace-nowrap"
               style={{ backgroundColor: value.bg }}
             >
-              {value.icon}
-              <div className="text-white">{value.name}</div>
+              <div className="flex flex-col  items-center justify-center gap-1">
+                {" "}
+                <div className="text-2xl">{value.icon}</div>
+                <div className="text-white ">{value.name}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -31,8 +34,11 @@ const Section = ({ title, items }) => {
 const Skills = () => {
   return (
     <div className="w-full py-10 text-white space-y-12">
-      <h2 className="text-4xl font-bold text-center text-primary">
-        Professional <span className="text-purple-600">Skillset</span>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12">
+        Professional{" "}
+        <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+          Skillset
+        </span>
       </h2>
       <Section title={"TechStack"} items={techStack} />
       <Section title={"Tools"} items={tools} />
