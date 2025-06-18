@@ -1,34 +1,12 @@
-import { Geist, Geist_Mono, Raleway } from "next/font/google";
-
-import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { PrimeReactProvider } from "primereact/api";
 import MobileNav from "@/components/Navbar/MobileNav";
 import StarParticles from "@/components/StarParticles";
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // choose weights you need
-  display: "swap",
-  variable: "--font-poppins", // optional if using CSS variable
-});
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-const value = {
+import "./globals.css";
+import { geistMono, geistSans, poppins } from "../../fonts/font";
+export const value = {
   appendTo: "self",
 };
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Portfolio",

@@ -24,11 +24,11 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
         <header className="mb-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold drop-shadow-lg animate-fade-down">
-            Hey There 👋,
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-4xl font-bold drop-shadow-lg animate-fade-down">
+            Hey There 👋
           </h1>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mt-2 drop-shadow-lg">
-            I'm Abhishek
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mt-2 drop-shadow-lg">
+           Abhishek Here
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-2xl text-gray-300 animate-fade-up delay-300">
             MERN Stack Developer
