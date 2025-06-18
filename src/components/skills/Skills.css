@@ -38,3 +38,39 @@
     animation-duration: 20s;
   }
 }
+
+
+/* reverse scroll */
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 20s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-scroll-reverse:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll-reverse {
+    animation-duration: 6s;
+  }
+}
+
+@media (max-width: 480px) {
+  .animate-scroll-reverse {
+    animation-duration: 20s;
+  }
+}
+
+
+

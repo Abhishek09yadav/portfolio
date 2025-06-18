@@ -4,25 +4,30 @@ import "./Skills.css";
 import { Tooltip } from "primereact/tooltip";
 import { techStack, tools } from "./skillData";
 
-const Section = ({ title, items }) => {
-  const duplicatedItems = [...items, ...items]; // duplicate for infinite scroll
+const duplicatedTechStack = [...techStack, ...techStack]
+const duplicatedTools = [...tools, ...tools,...tools,...tools];
+
+const Section = ({ title, items, reverse = false }) => {
   return (
     <div className="mb-8">
       <h2 className="text-xl font-semibold text-white mb-4 text-center">
         {title}
       </h2>
       <div className="overflow-hidden mx-auto">
-        <div className="animate-scroll gap-2">
-          {duplicatedItems.map((value, index) => (
+        <div
+          className={`${
+            reverse ? "animate-scroll-reverse" : "animate-scroll"
+          } gap-2`}
+        >
+          {items.map((value, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 px-10 py-8 rounded-md whitespace-nowrap"
+              className="flex items-center gap-2 px-10 py-8 rounded-md whitespace-nowrap border border-gray-100"
               style={{ backgroundColor: value.bg }}
             >
-              <div className="flex flex-col  items-center justify-center gap-1">
-                {" "}
+              <div className="flex flex-col items-center justify-center gap-1">
                 <div className="text-2xl">{value.icon}</div>
-                <div className="text-white ">{value.name}</div>
+                <div className="text-white">{value.name}</div>
               </div>
             </div>
           ))}
@@ -31,6 +36,7 @@ const Section = ({ title, items }) => {
     </div>
   );
 };
+
 const Skills = () => {
   return (
     <div className="w-full py-10 text-white space-y-12">
@@ -40,8 +46,8 @@ const Skills = () => {
           Skillset
         </span>
       </h2>
-      <Section title={"TechStack"} items={techStack} />
-      <Section title={"Tools"} items={tools} />
+      <Section title={"TechStack"} items={duplicatedTechStack} />
+      <Section title={"Tools"} items={duplicatedTools} reverse />
     </div>
   );
 };
