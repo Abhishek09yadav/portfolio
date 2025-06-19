@@ -10,8 +10,8 @@ import Image from "next/image";
 export default function Page() {
   return (
     <div className="z-10 flex flex-col relative min-h-screen items-center justify-center px-4 md:px-16 text-white mt-16">
-      <Hero className="" />
       {/* about */}
+      <Hero className="" />
       <AboutHeading />
       <MyTimeline />
       {/* skills */}
