@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import { ArrowDown } from "lucide-react";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 const BACKGROUND_IMAGE_URL =
   "https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -26,21 +26,25 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
           <header className="my-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-4xl font-bold ">
-              Hey There{" "}
-              <motion.span
-                initial={{ rotate: -15 }}
-                animate={{ rotate: [-15, 15, -15] }}
+            <motion.div className="flex mb-4 items-center justify-center  ">
+              <motion.h1
+                className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent  bg-clip-text"
+                initial={{ backgroundPosition: "0% 50%" }}
+                animate={{ backgroundPosition: "50% 100%" }}
                 transition={{
-                  repeat: Infinity,
                   duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
                   ease: "easeInOut",
                 }}
+                style={{
+                  backgroundSize: "200% 200%",
+                }}
               >
-                👋
-              </motion.span>
-            </h1>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl font-bold mt-2 drop-shadow-lg">
+                Hey There{" "}
+              </motion.h1>
+            </motion.div>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold mt-2 drop-shadow-lg">
               Abhishek Here
             </h2>
             <p className="mt-4 text-base sm:text-lg md:text-2xl text-gray-300 animate-fade-up delay-300">
