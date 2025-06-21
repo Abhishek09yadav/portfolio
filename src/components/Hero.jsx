@@ -11,57 +11,63 @@ const Hero = () => {
   const router = useRouter();
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-80"
-        style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
-      />
+    <>
+      {" "}
+      <div className="relative w-full h-screen bg-black overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-80"
+          style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
+        />
 
-      {/* Dark Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/30" />
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/30" />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-        <header className="my-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-4xl font-bold ">
-            Hey There{" "}
-            <motion.span
-              initial={{ rotate: -15 }}
-              animate={{ rotate: [-15, 15, -15] }}
-              transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
+          <header className="my-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-4xl font-bold ">
+              Hey There{" "}
+              <motion.span
+                initial={{ rotate: -15 }}
+                animate={{ rotate: [-15, 15, -15] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1,
+                  ease: "easeInOut",
+                }}
+              >
+                👋
+              </motion.span>
+            </h1>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl font-bold mt-2 drop-shadow-lg">
+              Abhishek Here
+            </h2>
+            <p className="mt-4 text-base sm:text-lg md:text-2xl text-gray-300 animate-fade-up delay-300">
+              MERN Stack Developer
+            </p>
+          </header>
+
+          <main className="max-w-2xl animate-fade-up delay-500">
+            <p className="text-sm sm:text-base md:text-xl leading-relaxed text-gray-200">
+              I build scalable, high-performance web applications using MongoDB,
+              Express.js, React, and Node.js. Let’s bring your ideas to life
+              with clean code and intuitive design.
+            </p>
+          </main>
+
+          <footer className="mt-10 animate-fade-up delay-700">
+            <a
+              href="#portfolio"
+              className="inline-flex items-center justify-center px-6 py-3 text-base md:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-transform duration-300 hover:scale-105 shadow-md"
             >
-          
-              👋
-            </motion.span>
-          </h1>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl font-bold mt-2 drop-shadow-lg">
-            Abhishek Here
-          </h2>
-          <p className="mt-4 text-base sm:text-lg md:text-2xl text-gray-300 animate-fade-up delay-300">
-            MERN Stack Developer
-          </p>
-        </header>
-
-        <main className="max-w-2xl animate-fade-up delay-500">
-          <p className="text-sm sm:text-base md:text-xl leading-relaxed text-gray-200">
-            I build scalable, high-performance web applications using MongoDB,
-            Express.js, React, and Node.js. Let’s bring your ideas to life with
-            clean code and intuitive design.
-          </p>
-        </main>
-
-        <footer className="mt-10 animate-fade-up delay-700">
-          <a
-            href="#portfolio"
-            className="inline-flex items-center justify-center px-6 py-3 text-base md:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-transform duration-300 hover:scale-105 shadow-md"
-          >
-            View My Work
-            <ArrowDown className="w-5 h-5 ml-2" />
-          </a>
-        </footer>
+              View My Work
+              <ArrowDown className="w-5 h-5 ml-2" />
+            </a>
+          </footer>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
