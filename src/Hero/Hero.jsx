@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, time } from "motion/react";
 const BACKGROUND_IMAGE_URL =
   "https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -21,26 +21,28 @@ const Hero = () => {
     "Full-stack problem solver",
     "Frontend architect",
   ];
-  const [index, setIndex] = useState(0);
+  const [phraseIndex, setPhraseIndex] = useState(0);
   const [text, setText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
+
   useEffect(() => {
-    const currentPhrase = phrases[index];
-    if (charIndex < currentPhrase.length) {
-      const timeout = setTimeout(() => {
-        setText((prev) => prev + currentPhrase[charIndex]);
+    const currPhrase = phrases[phraseIndex];
+    if (charIndex < currPhrase.length) {
+      const typing = setInterval(() => {
+        setText((prev) => prev + currPhrase[charIndex]);
         setCharIndex((prev) => prev + 1);
+        
       }, 100);
-      return () => clearTimeout(timeout);
+      return () => clearInterval(typing);
     } else {
       const timeout = setTimeout(() => {
-        setText("");
+        setPhraseIndex((prev) => prev + 1);
         setCharIndex(0);
-        setIndex((prev) => (prev + 1) % phrases.length);
+        setText("");
       }, 2000);
       return () => clearTimeout(timeout);
     }
-  }, [charIndex, index]);
+  }, [charIndex, phraseIndex]);
   return (
     <>
       {" "}
