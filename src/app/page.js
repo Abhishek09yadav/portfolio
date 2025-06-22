@@ -1,10 +1,10 @@
 import AboutHeading from "@/components/about/AboutHeading";
 import MyTimeline from "@/components/about/MyTimeline";
-import Hero from "@/components/Hero";
 import ProjectHeading from "@/components/projects/ProjectHeading";
 import Projects from "@/components/projects/Projects";
 import CodeCalendar from "@/components/skills/CodeCalendar";
 import Skills from "@/components/skills/Skills";
+import Hero from "@/Hero/Hero";
 import Image from "next/image";
 
 export default function Page() {

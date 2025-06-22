@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 const BACKGROUND_IMAGE_URL =
@@ -9,7 +9,38 @@ const BACKGROUND_IMAGE_URL =
 
 const Hero = () => {
   const router = useRouter();
-
+  const phrases = [
+    "MERN Stack Developer",
+    "I design websites",
+    "React & Node.js Enthusiast",
+    "Clean UI lover",
+    "Pixel-perfect UI builder",
+    "I craft scalable web apps",
+    "Responsive design advocate",
+    "JavaScript addict",
+    "Full-stack problem solver",
+    "Frontend architect",
+  ];
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
+  useEffect(() => {
+    const currentPhrase = phrases[index];
+    if (charIndex < currentPhrase.length) {
+      const timeout = setTimeout(() => {
+        setText((prev) => prev + currentPhrase[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setText("");
+        setCharIndex(0);
+        setIndex((prev) => (prev + 1) % phrases.length);
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [charIndex, index]);
   return (
     <>
       {" "}
@@ -26,7 +57,7 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
           <header className="my-6">
-            <motion.div className="flex mb-4 items-center justify-center  ">
+            <motion.div className="flex mb-4 items-center justify-center gap-2 ">
               <motion.h1
                 className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent  bg-clip-text"
                 initial={{ backgroundPosition: "0% 50%" }}
@@ -41,14 +72,26 @@ const Hero = () => {
                   backgroundSize: "200% 200%",
                 }}
               >
-                Hey There{" "}
+                Hey There
+              </motion.h1>
+              <motion.h1
+                className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                animate={{ rotate: [0, 20, -10, 20, -10, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatDelay: 1.5,
+                }}
+              >
+                👋
               </motion.h1>
             </motion.div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold mt-2 drop-shadow-lg">
               Abhishek Here
             </h2>
-            <p className="mt-4 text-base sm:text-lg md:text-2xl text-gray-300 animate-fade-up delay-300">
-              MERN Stack Developer
+            <p className="text-base sm:text-lg md:text-2xl text-gray-300 typing-text">
+              {text}
+              <span className="blinking-cursor">|</span>
             </p>
           </header>
 
