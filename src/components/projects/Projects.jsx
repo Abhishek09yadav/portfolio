@@ -5,9 +5,8 @@ import { projectData } from "./projectData";
 const Projects = () => {
   return (
     <div className="p-8 flex flex-row gap-7">
-      {projectData.map((value) => (
-        <ProjectCard project={value} />
-
+      {projectData.map((value, index) => (
+        <ProjectCard key={index} project={value} />
       ))}
     </div>
   );

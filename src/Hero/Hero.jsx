@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { motion, time } from "motion/react";
+import styles from "./Hero.module.css";
 const BACKGROUND_IMAGE_URL =
   "https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -31,12 +32,12 @@ const Hero = () => {
       const typing = setInterval(() => {
         setText((prev) => prev + currPhrase[charIndex]);
         setCharIndex((prev) => prev + 1);
-        
+
       }, 100);
       return () => clearInterval(typing);
     } else {
       const timeout = setTimeout(() => {
-        setPhraseIndex((prev) => prev + 1);
+        setPhraseIndex((prev) => (prev + 1) % phrases.length);
         setCharIndex(0);
         setText("");
       }, 2000);
@@ -57,8 +58,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/30" />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-          <header className="my-6">
+        <div className="relative z-10 flex flex-col justify-center items-center min-h-screen text-white px-4 text-center">
+          <header className="space-y-4 mb-6">
             <motion.div className="flex mb-4 items-center justify-center gap-2 ">
               <motion.h1
                 className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent  bg-clip-text"
@@ -91,9 +92,11 @@ const Hero = () => {
             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl font-semibold mt-2 drop-shadow-lg">
               Abhishek Here
             </h2>
-            <p className="text-base sm:text-lg md:text-2xl text-gray-300 typing-text">
+            <p
+              className={`text-base sm:text-lg md:text-2xl text-gray-300 typing-text ${styles.typingText}`}
+            >
               {text}
-              <span className="blinking-cursor">|</span>
+              <span className={`${styles.blinkingCursor}`}>|</span>
             </p>
           </header>
 

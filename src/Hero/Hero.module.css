@@ -1,10 +1,10 @@
-.typing-text {
+.typingText {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
 }
 
-.blinking-cursor {
+.blinkingCursor {
   animation: blink 0.7s infinite;
   color: white;
 }
