@@ -54,17 +54,18 @@ const StarParticles = () => {
           value: 400,
         },
         opacity: {
+          value: {
+            min: 0.1,
+            max: 1,
+          },
           animation: {
             enable: true,
-            minimumValue: 0.05,
-            speed: 3,
+            speed: 2,
+            minimumValue: 0.1,
             sync: false,
+            startValue: "random",
+            destroy: "none",
           },
-          random: {
-            enable: true,
-            minimumValue: 0.05,
-          },
-          value: 1,
         },
         shape: {
           type: "circle",
@@ -77,7 +78,7 @@ const StarParticles = () => {
           value: 1,
         },
       },
-    } ),
+    }),
     []
   );
 
