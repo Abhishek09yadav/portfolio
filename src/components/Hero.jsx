@@ -45,7 +45,7 @@ const Hero = () => {
 
         <footer className="mt-10 animate-fade-up delay-700">
           <a
-            href="#portfolio"
+            href="/projects"
             className="inline-flex items-center justify-center px-6 py-3 text-base md:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-transform duration-300 hover:scale-105 shadow-md"
           >
             View My Work

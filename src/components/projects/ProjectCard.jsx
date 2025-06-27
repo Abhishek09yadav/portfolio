@@ -12,16 +12,20 @@ const ProjectCard = ({ project }) => {
         height={250}
         className="w-full h-52 object-cover"
       />
-      <div className="text-lg text-yellow-500 mb-2 gap-4">
-        <span>{project.startDate}</span>
-        {project.endDate && ` - ${project.endDate}`}
-        {project.status === "in-progress" && (
-          <span className="inline-block mb-2 px-2 py-1 text-xs text-yellow-300 bg-yellow-900 rounded">
-            On Progress
-          </span>
-        )}
+      <div className="text-lg text-yellow-500 mb-2 gap-4 flex justify-around mt-3">
+        <div className="flex flex-row  gap-2">
+          <div>{project.startDate}</div>
+          {project.endDate && ` - ${project.endDate}`}
+          {project.status === "in-progress" && (
+            <> -
+              <span className="inline-block mb-2 px-2 py-1 text-xs text-yellow-300 bg-yellow-900 rounded">
+                On Progress
+              </span>
+            </>
+          )}
+        </div>
       </div>
-      <div className="flex gap-3 mt-3">
+      <div className="flex gap-3 mt-3 items-center justify-center">
         <a
           href={project.github}
           target="_blank"
