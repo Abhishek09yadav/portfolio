@@ -9,7 +9,7 @@ const CodeCalendar = () => {
           Code
         </span>
       </h2>
-      <div className="w-full  overflow-x-auto p-3">
+      <div className="w-full flex justify-center  overflow-x-auto p-3">
         <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-full min-w-[350px]">
           <GitHubCalendar
             username="abhishek09yadav"
