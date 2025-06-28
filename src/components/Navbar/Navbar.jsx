@@ -37,7 +37,7 @@ const Navbar = () => {
           {navLinks.map((value, index) => (
             <button
               key={index}
-              className="text-white hover:text-purple-500  cursor-pointer transition duration-300 flex items-center gap-1"
+              className="text-white hover:text-customColor  cursor-pointer transition duration-300 flex items-center gap-1"
               onClick={() => handleClick(value.path)}
             >
               {value.name}
