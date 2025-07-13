@@ -2,8 +2,10 @@ import Navbar from "@/components/Navbar/Navbar";
 import { PrimeReactProvider } from "primereact/api";
 import MobileNav from "@/components/Navbar/MobileNav";
 import StarParticles from "@/components/StarParticles";
+import toast, { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { geistMono, geistSans, poppins } from "../../fonts/font";
+import Footer from "@/components/Footer";
 export const value = {
   appendTo: "self",
 };
@@ -21,8 +23,9 @@ export default function RootLayout({ children }) {
         // ${geistSans.variable} ${geistMono.variable}
       >
         <PrimeReactProvider value={value}>
+          <Toaster />
           <Navbar />
-          <MobileNav />
+          {/* <MobileNav /> */}
           <StarParticles />
           {children}
         </PrimeReactProvider>

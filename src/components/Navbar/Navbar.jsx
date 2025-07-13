@@ -1,3 +1,4 @@
+/*************  ✨ Windsurf Command 🌟  *************/
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -26,7 +27,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-white/30 backdrop-blur-md border-b border-white/20 ">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
         <Image
-          className="cursor-pointer bg-white rounded-md w-20"
+          className="cursor-pointer bg-gray-100 p-1 rounded-md w-20"
           onClick={() => router.push("/")}
           width={100}
           height={100}
@@ -44,7 +45,31 @@ const Navbar = () => {
             </button>
           ))}
         </div>
+        {/* hamburger for mobile screen  */}
+        <div className="md:hidden">
+          <button
+            className="text-white cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
+      {/* mobile menu */}
+      {isOpen && (
+        <div className="grid grid-cols-1 gap-3 p-3 rounded-md shadow-md">
+          {navLinks.map((value, index) => (
+            <button
+              className="text-white hover:text-customColor flex items-center gap-2"
+              key={index}
+              onClick={() => handleClick(value.path)}
+            >
+              {<value.icon size={18} />}
+              {value.name}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

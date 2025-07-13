@@ -6,12 +6,13 @@
 @import "primeicons/primeicons.css";                              
 
 :root {
-  /* --background: #171717; */
+  --background: #171717;
   --foreground: #ffffff;
 }
 
 @theme {
   --color-customColor: oklch(62.7% 0.265 303.9);
+  --color-customColorLight: oklch(0.7709 0.1276 303.9);
   --color-customColorDark: oklch(43.8% 0.218 303.724);
 }
 @theme inline {

@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import AllSkills from "@/components/skills/AllSkills";
 import CodeCalendar from "@/components/skills/CodeCalendar";
 import Skills from "@/components/skills/Skills";
@@ -7,7 +8,8 @@ const page = () => {
   return (
     <div className="relative flex-1">
       <AllSkills />
-      <CodeCalendar/>
+      <CodeCalendar />
+      <Footer />
     </div>
   );
 };
