@@ -22,6 +22,9 @@
   --font-raleway: var(--font-raleway)
   --font-poppins:var(--font-poppins)
 }
+.btn-gradient {
+  @apply px-6 py-2 rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:opacity-90 transition duration-300 cursor-pointer;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

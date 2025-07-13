@@ -44,6 +44,8 @@ const AllSkills = () => {
       </h2>
       <Section title={"TechStack"} items={techStack} />
       <Section title={"Tools"} items={tools} reverse />
+      
+  
     </div>
   );
 };

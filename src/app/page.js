@@ -1,17 +1,17 @@
 import AboutHeading from "@/components/about/AboutHeading";
 import MyTimeline from "@/components/about/MyTimeline";
 import ProjectHeading from "@/components/projects/ProjectHeading";
-import Projects from "@/components/projects/Projects";
+import ProjectPreview from "@/components/projects/ProjectPreview";
 import CodeCalendar from "@/components/skills/CodeCalendar";
 import Skills from "@/components/skills/Skills";
-import Hero from "@/Hero/Hero";
 import Image from "next/image";
+import Hero from "@/components/Hero/Hero";
 
 export default function Page() {
   return (
-    <div className="z-10 flex flex-col relative min-h-screen items-center justify-center px-4 md:px-16 text-white mt-16">
+    <div className="z-10  flex flex-col relative min-h-screen items-center justify-center px-4 md:px-16 text-white mt-16 mb-10">
       {/* about */}
-      <Hero className="" />
+      <Hero />
       <AboutHeading />
       <MyTimeline />
       {/* skills */}
@@ -19,11 +19,11 @@ export default function Page() {
       <CodeCalendar />
       {/* projects */}
       <ProjectHeading />
-      <Projects />
-      {/* contact */}
-      
-      {/* footer */}
+      <ProjectPreview />
 
+      {/* contact */}
+
+      {/* footer */}
     </div>
   );
 }

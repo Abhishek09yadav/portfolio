@@ -1,13 +1,13 @@
 import ProjectCard from "@/components/projects/ProjectCard";
 import ProjectHeading from "@/components/projects/ProjectHeading";
-import Projects from "@/components/projects/Projects";
+import AllProjects from '@/components/projects/AllProjects'
 import React from "react";
 
 const page = () => {
   return (
     <div className="relative">
       <ProjectHeading />
-      <Projects />
+      <AllProjects />
     </div>
   );
 };

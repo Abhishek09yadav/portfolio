@@ -4,24 +4,24 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { motion, time } from "motion/react";
-import styles from "./Hero.module.css";
+// import styles from "./Hero.module.css";
 const BACKGROUND_IMAGE_URL =
   "https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const Hero = () => {
   const router = useRouter();
   const phrases = [
-    "MERN Stack Developer",
-    "I design websites",
-    "React & Node.js Enthusiast",
-    "Clean UI lover",
-    "Pixel-perfect UI builder",
-    "I craft scalable web apps",
-    "Responsive design advocate",
-    "JavaScript addict",
-    "Full-stack problem solver",
-    "Frontend architect",
+    "Building scalable full-stack web applications",
+    "Crafting responsive UIs with React.js",
+    "Designing RESTful APIs using Node.js and Express",
+    "Managing data effectively with MongoDB",
+    "Integrating authentication and authorization",
+    "Optimizing performance and user experience",
+    "Writing clean, maintainable code with best practices",
+    "Deploying full-stack apps with cloud platforms",
+    "Passionate about modern web development",
   ];
+  // "Managing data effectively with MongoDB",
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [text, setText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
@@ -93,10 +93,10 @@ const Hero = () => {
               Abhishek Here
             </h2>
             <p
-              className={`text-base sm:text-lg md:text-2xl text-gray-300 typing-text ${styles.typingText}`}
+              // className={`text-base sm:text-lg md:text-2xl text-gray-300 typing-text ${styles.typingText}`}
             >
               {text}
-              <span className={`${styles.blinkingCursor}`}>|</span>
+              {/* <span className={`${styles.blinkingCursor}`}>|</span> */}
             </p>
           </header>
 
