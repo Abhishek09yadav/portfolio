@@ -112,6 +112,7 @@ const Hero = () => {
             <a
               href="#portfolio"
               className="inline-flex items-center justify-center px-6 py-3 text-base md:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-transform duration-300 hover:scale-105 shadow-md"
+              onClick={router.push('/projects')}
             >
               View My Work
               <ArrowDown className="w-5 h-5 ml-2" />
