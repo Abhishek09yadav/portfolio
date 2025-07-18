@@ -1,4 +1,3 @@
-/*************  ✨ Windsurf Command 🌟  *************/
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -56,20 +55,27 @@ const Navbar = () => {
         </div>
       </div>
       {/* mobile menu */}
-      {isOpen && (
-        <div className="grid grid-cols-1 gap-3 p-3 rounded-md shadow-md">
-          {navLinks.map((value, index) => (
-            <button
-              className="text-white hover:text-customColor flex items-center gap-2"
-              key={index}
-              onClick={() => handleClick(value.path)}
-            >
-              {<value.icon size={18} />}
-              {value.name}
-            </button>
-          ))}
+
+      <div
+        className={`fixed top-13 left-0 h-screen w-xl rounded-md  bg-gray-800  max-w-[200px] backdrop-blur-md z-40 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="h-screen rounded-md shadow-md overflow-y-auto flex flex-col items-center justify-center">
+          <div className="flex flex-col gap-3 p-3 ">
+            {navLinks.map((value, index) => (
+              <button
+                className="text-white hover:text-customColor flex items-center gap-2"
+                key={index}
+                onClick={() => handleClick(value.path)}
+              >
+                <value.icon size={18} />
+                {value.name}
+              </button>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
