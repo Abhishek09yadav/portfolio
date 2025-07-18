@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-
+import { BsSendFill } from "react-icons/bs";
 const Contact = () => {
   const initial = {
     name: "",
@@ -113,11 +113,22 @@ const Contact = () => {
               className="w-full px-4 py-2 outline-none border border-customColor rounded-md focus:ring-2 focus:ring-customColorDark text-white bg-transparent"
             ></textarea>
           </div>
-          <button
+          {/* <button
             type="submit"
             className="w-full opacity-100 border border-customColor cursor-pointer hover:bg-customColorDark transition duration-300 px-4 py-2 rounded font-semibold text-white"
           >
             Send Message
+          </button> */}
+          <button
+            type="submit"
+            className="relative p-3 w-full h-12 border border-customColor rounded font-semibold group shadow-md text-white text-center cursor-pointer overflow-hidden"
+          >
+            <span className="absolute inset-0 flex items-center justify-center rounded-sm bg-customColor transition-all duration-300 ease-in-out w-[30px] group-hover:w-full h-full">
+              <BsSendFill className="text-xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-20" />
+            </span>
+            <span className="relative z-10 group-hover:text-white">
+              Send Message
+            </span>
           </button>
         </form>
         {/* contact details */}
