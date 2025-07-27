@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
               {" "}
               -
               <span className="px-2 py-0.5   text-xs text-yellow-300 bg-yellow-900 rounded-full">
-                On Progress
+                In Progress
               </span>
             </>
           )}
@@ -33,23 +33,27 @@ const ProjectCard = ({ project }) => {
       </div>
       {/* link section  */}
       <div className=" flex justify-center  gap-3 items-center">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-neutral-800 rounded-md hover:bg-neutral-700 hover:scale-105 flex items-center gap-2 text-sm"
-        >
-          <FaGithub /> GitHub
-        </a>
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-neutral-800 rounded-md hover:bg-neutral-700 hover:scale-105 flex items-center gap-2 text-sm"
+          >
+            <FaGithub /> GitHub
+          </a>
+        )}
 
-        <a
-          href={project.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-blue-700 rounded-md hover:bg-blue-600 hover:scale-105 flex items-center gap-2 text-sm"
-        >
-          <FaExternalLinkAlt /> Demo
-        </a>
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-blue-700 rounded-md hover:bg-blue-600 hover:scale-105 flex items-center gap-2 text-sm"
+          >
+            <FaExternalLinkAlt /> Demo
+          </a>
+        )}
       </div>
     </div>
   );

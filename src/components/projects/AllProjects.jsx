@@ -1,7 +1,7 @@
-"use client"
-import React from 'react'
+"use client";
+import React from "react";
 import ProjectCard from "./ProjectCard";
-import { projectData } from "./projectData";
+import { projectData } from "./clientProjectData";
 const Projects = () => {
   return (
     <div className="p-8 gap-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

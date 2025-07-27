@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { projectData } from "./projectData";
+import { projectData } from "./clientProjectData";
 import { useRouter } from "next/navigation";
 const ProjectPreview = () => {
   const router = useRouter();

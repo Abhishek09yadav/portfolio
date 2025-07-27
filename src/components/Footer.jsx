@@ -37,7 +37,7 @@ function Footer() {
         </div>
 
      
-        <div>© {year} AY</div>
+        <div>Copyright {' '} © {year} AY</div>
       </div>
     </footer>
   );

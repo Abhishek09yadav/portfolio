@@ -1,9 +1,19 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { BsSendFill } from "react-icons/bs";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
+
 const Contact = () => {
+  const router = useRouter();
   const initial = {
     name: "",
     email: "",
@@ -68,7 +78,7 @@ const Contact = () => {
           </h2>
 
           <div className="mb-4">
-            <label className="block mb-1">Name</label>
+            <label className="block mb-1">Name *</label>
             <input
               type="text"
               name="name"
@@ -80,7 +90,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1">Email</label>
+            <label className="block mb-1">Email *</label>
             <input
               type="email"
               name="email"
@@ -92,7 +102,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1">Phone</label>
+            <label className="block mb-1">Phone (Optional)</label>
             <input
               type="tel"
               name="phone"
@@ -103,7 +113,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1">Message</label>
+            <label className="block mb-1">Message *</label>
             <textarea
               name="message"
               rows={4}
@@ -124,7 +134,7 @@ const Contact = () => {
             className="relative p-3 w-full h-12 border border-customColor rounded font-semibold group shadow-md text-white text-center cursor-pointer overflow-hidden"
           >
             <span className="absolute inset-0 flex items-center justify-center rounded-sm bg-customColor transition-all duration-300 ease-in-out w-[30px] group-hover:w-full h-full">
-              <BsSendFill className="text-xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-20" />
+              <BsSendFill className="text-xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-20  group-hover:animate-bounce" />
             </span>
             <span className="relative z-10 group-hover:text-white">
               Send Message
@@ -132,8 +142,70 @@ const Contact = () => {
           </button>
         </form>
         {/* contact details */}
-        <div className="w-full border border-customColorLight rounded-md p-6">
-          hello
+        <div className="relative w-full border border-customColorLight rounded-md p-6">
+          <h2 className="text-2xl font-semibold mb-6 text-center">
+            Contact Details
+          </h2>
+          <ul className="space-y-4 text-lg">
+            <li className="hover:bg-purple-300/30 transition-all duration-300 ring ring-customColorLight p-4 rounded-3xl text-center">
+              <p className="text-xl font-semibold flex items-center justify-center gap-2">
+                <FaMapMarkerAlt /> Address:
+              </p>
+              <span className="text-customColor ">Kota, Rajasthan, India</span>
+            </li>
+
+            <li className="hover:bg-purple-300/30 transition-all duration-300 ring ring-customColorLight p-4 rounded-3xl text-center">
+              <p className="text-xl font-semibold flex items-center justify-center gap-2">
+                <FaEnvelope /> Email:
+              </p>
+              <a
+                href="mailto:monuy8830@gmail.com"
+                className=" hover-underline-animation text-xl font-semibold text-customColor inline-block"
+              >
+                monuy8830@gmail.com
+              </a>
+            </li>
+
+            <li className="hover:bg-purple-300/30 transition-all duration-300 ring ring-customColorLight p-4 rounded-3xl text-center">
+              <p className="text-xl font-semibold flex items-center justify-center gap-2">
+                <FaPhoneAlt /> Phone:
+              </p>
+              <a
+                href="tel:+918601799043"
+                className="hover-underline-animation text-xl font-semibold text-customColor inline-block"
+              >
+                +91 86017 99043
+              </a>
+            </li>
+
+            <li className=" hover:bg-purple-300/30 transition-all duration-300 ring ring-customColorLight p-4 rounded-3xl text-center">
+              <p className="text-xl font-semibold flex items-center justify-center gap-2 ">
+                <FaLinkedin /> LinkedIn:
+              </p>
+              <a
+                href="https://www.linkedin.com/in/abhishek-yadav007"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" text-customColor hover-underline-animation inline-block"
+              >
+                abhishek-yadav007
+              </a>
+            </li>
+
+            <li className="hover:bg-purple-300/30 hover:opacity-90 transition-all duration-300 ring ring-customColorLight p-4 rounded-3xl text-center">
+              <p className="text-xl font-semibold flex items-center justify-center gap-2">
+                <FaGithub /> GitHub:
+              </p>
+              <a
+                href="https://github.com/Abhishek09yadav"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-customColor hover-underline-animation  inline-block"
+              >
+                Abhishek09yadav
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

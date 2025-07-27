@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /* globals.css or styles/primereact-theme.css */
-@import "primereact/resources/themes/lara-light-blue/theme.css"; 
-@import "primereact/resources/primereact.min.css";                
-@import "primeicons/primeicons.css";                              
+@import "primereact/resources/themes/lara-light-blue/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
 
 :root {
   --background: #171717;
@@ -15,18 +15,22 @@
   --color-customColorLight: oklch(0.7709 0.1276 303.9);
   --color-customColorDark: oklch(43.8% 0.218 303.724);
 }
-@theme inline { 
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-raleway: var(--font-raleway);
-  --font-poppins:var(--font-poppins);
+  --font-poppins: var(--font-poppins);
 }
 .btn-gradient {
   @apply px-6 py-2 rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:opacity-90 transition duration-300 cursor-pointer;
 }
-
+@layer components {
+  .hover-underline-animation {
+    @apply relative before:absolute before:bg-customColor before:w-full before:-bottom-1 before:block before:h-0.5 before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100;
+  }
+}
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -37,17 +41,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins , Arial, Helvetica, sans-serif);
-  /* , Arial, Helvetica, sans-serif */  
+  font-family: var(--font-poppins, Arial, Helvetica, sans-serif);
+  /* , Arial, Helvetica, sans-serif */
 }
 
-
 /* scroll bar color */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a855f7, #9333ea); 
+  background: linear-gradient(to bottom, #a855f7, #9333ea);
   border-radius: 6px;
 }
 
