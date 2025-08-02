@@ -30,7 +30,7 @@ const Navbar = () => {
           onClick={() => router.push("/")}
           width={100}
           height={100}
-          src="/logo/logo.svg"
+          src="/logo/logo.png"
           alt="Logo"
         />
         <div className="hidden md:flex space-x-6">

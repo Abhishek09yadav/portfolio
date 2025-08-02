@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const page = () => {
   return (
     <div className="relative mt-16">
-      <ProjectHeading />
+      {/* <ProjectHeading /> */}
       <AllProjects />
       <Footer />
     </div>

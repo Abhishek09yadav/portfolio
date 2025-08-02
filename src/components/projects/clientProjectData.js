@@ -1,5 +1,5 @@
 // app/components/projectData.js
-export const projectData = [
+export const clientProjectData = [
   // {
   //   title: "Jaipur Chakki",
   //   description:
@@ -22,17 +22,7 @@ export const projectData = [
     demo: "https://orrito.com",
     status: "completed",
   },
-  {
-    title: "Ummed Club Kota",
-    description:
-      "Two portfolio websites showcasing local businesses with custom UI and branding.",
-    image: "/img/client_proj_img/ummedclubkota.png",
-    startDate: "jan 2025",
-    endDate: "Feb 2025",
-    github: "",
-    demo: "https://ummedclubkota.com",
-    status: "completed",
-  },
+
   {
     title: "Navkar E-Store",
     description:
@@ -47,12 +37,23 @@ export const projectData = [
   {
     title: "O'Century",
     description:
-      "A monsoon-deals e-commerce storefront for lifestyle products with category-wise promotions.",
+      "An e-commerce storefront for lifestyle products with category-wise promotions.",
     image: "/img/client_proj_img/ocentury.png",
     startDate: "May 2025",
     endDate: "Jun 2025",
     github: "",
     demo: "https://ocentury.in",
+    status: "completed",
+  },
+  {
+    title: "TravelIdea",
+    description:
+      "A travel-visa service portal offering visa registration, Razorpay payments, real-time dashboard, and blog management.",
+    image: "/img/client_proj_img/travelidea.png",
+    startDate: "Feb 2025",
+    endDate: "March 2025",
+    github: "",
+    demo: "https://travel-idea-alpha.vercel.app/",
     status: "completed",
   },
   {
@@ -108,6 +109,17 @@ export const projectData = [
     endDate: "May 2025",
     github: "",
     demo: "https://timelessfurnishing.in",
+    status: "completed",
+  },
+  {
+    title: "Ummed Club Kota",
+    description:
+      "Two portfolio websites showcasing local businesses with custom UI and branding.",
+    image: "/img/client_proj_img/ummedclubkota.png",
+    startDate: "jan 2025",
+    endDate: "Feb 2025",
+    github: "",
+    demo: "https://ummedclubkota.com",
     status: "completed",
   },
 ];

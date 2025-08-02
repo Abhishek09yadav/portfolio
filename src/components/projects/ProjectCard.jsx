@@ -12,11 +12,11 @@ const ProjectCard = ({ project }) => {
         className="w-full h-52 object-cover group-hover:scale-105 "
       />
       {/* Title Block */}
-      <div className="flex justify-center my-2 font-semibold">
+      <div className="flex justify-center my-2 font-semibold text-xl text-[#e2eff1]">
         {project.title}
       </div>
       {/* status block */}
-      <div className="text-sm text-blue-200 m-2 flex justify-center gap-2 items-center">
+      <div className="text-sm text-blue-200 m-2 flex justify-center  items-center">
         <div className="flex flex-row  gap-2">
           <div>{project.startDate}</div>
           {project.endDate && ` - ${project.endDate}`}
@@ -36,7 +36,7 @@ const ProjectCard = ({ project }) => {
         {project.description}
       </div>
       {/* link section  */}
-      <div className=" flex justify-center  gap-3 items-center">
+      <div className=" flex justify-center  gap-3 items-center mb-4">
         {project.github && (
           <a
             href={project.github}
@@ -53,7 +53,7 @@ const ProjectCard = ({ project }) => {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 mb-4 bg-blue-700 rounded-md hover:bg-blue-600 hover:scale-105 flex items-center gap-2 text-sm"
+            className="px-4 py-2  bg-blue-700 rounded-md hover:bg-blue-600 hover:scale-105 flex items-center gap-2 text-sm"
           >
             <FaExternalLinkAlt /> Demo
           </a>

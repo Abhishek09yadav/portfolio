@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { projectData } from "./clientProjectData";
+import { clientProjectData } from "./clientProjectData";
 import { useRouter } from "next/navigation";
 const ProjectPreview = () => {
   const router = useRouter();
   return (
     <div>
-      {" "}
+      
       <div className="p-8 gap-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {projectData.slice(0, 4).map((value, index) => (
+        {clientProjectData.slice(0, 4).map((value, index) => (
           <ProjectCard key={index} project={value} />
         ))}
       </div>
