@@ -15,11 +15,11 @@ export const personalProjectData = [
     title: "ConnectVerse – Hobby Match",
     description:
       "A social network web app that helps users find and connect with hobby buddies based on shared interests.",
-    image: "/img/personal_proj_img/connectverse.png", 
+    image: "/img/personal_proj_img/connectverse.png",
     startDate: "Jul 2024",
     endDate: "Aug 2024",
     github: "",
-    demo: "https://connectverse.onrender.com",
+    demo: "https://find-hobby.vercel.app",
     status: "completed",
   },
 ];
