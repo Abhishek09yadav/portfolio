@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const ProjectCard = ({ project }) => {
   return (
-    <div className="group min-h-[410px] relative max-w-sm w-full rounded-2xl border border-blue-300 bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden shadow-md hover:shadow-xl hover:shadow-customColor transition-all duration-300">
+    <div className="group min-h-[410px] relative max-w-sm w-full rounded-2xl border border-blue-300 bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden shadow-md hover:shadow-md hover:shadow-customColor transition-all duration-300 space-y-4">
       <Image
         src={project.image || "https://placehold.co/600x400"}
         alt={project.title}
@@ -11,6 +11,10 @@ const ProjectCard = ({ project }) => {
         height={250}
         className="w-full h-52 object-cover group-hover:scale-105 "
       />
+      {/* Title Block */}
+      <div className="flex justify-center my-2 font-semibold">
+        {project.title}
+      </div>
       {/* status block */}
       <div className="text-sm text-blue-200 m-2 flex justify-center gap-2 items-center">
         <div className="flex flex-row  gap-2">
@@ -49,7 +53,7 @@ const ProjectCard = ({ project }) => {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-blue-700 rounded-md hover:bg-blue-600 hover:scale-105 flex items-center gap-2 text-sm"
+            className="px-4 py-2 mb-4 bg-blue-700 rounded-md hover:bg-blue-600 hover:scale-105 flex items-center gap-2 text-sm"
           >
             <FaExternalLinkAlt /> Demo
           </a>
