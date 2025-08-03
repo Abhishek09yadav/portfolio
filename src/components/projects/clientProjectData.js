@@ -19,7 +19,7 @@ export const clientProjectData = [
     startDate: "Jun 2025",
     endDate: "July 2025",
     github: "",
-    demo: "https://orrito.com",
+    demo: "https://orrito.vercel.app",
     status: "completed",
   },
 
