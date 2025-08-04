@@ -25,7 +25,7 @@ const Section = ({ title, items, reverse = false }) => {
           {items.map((value, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 px-10 py-8 rounded-md whitespace-nowrap border border-gray-100"
+              className="flex items-center justify-center gap-2 w-[150px] h-[120px] rounded-md border border-gray-100"
               style={{ backgroundColor: value.bg }}
             >
               <div className="flex flex-col items-center justify-center gap-1">

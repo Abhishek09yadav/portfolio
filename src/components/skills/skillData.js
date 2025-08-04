@@ -1,4 +1,4 @@
-import { FaBug, FaTools, FaReact, FaNodeJs } from "react-icons/fa";
+import { FaBug, FaTools, FaReact, FaNodeJs, FaCloud } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaGitAlt, FaHtml5, FaCss3 } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -91,5 +91,10 @@ export const tools = [
     name: "VS Code",
     icon: <VscVscode size={40} color="#007acc" />,
     bg: "#007acc20",
+  },
+  {
+    name: "Cloudinary",
+    icon: <FaCloud size={40} color="#3448C5" />,
+    bg: "#3448C520",
   },
 ];
