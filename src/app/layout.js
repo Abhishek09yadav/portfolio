@@ -21,6 +21,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Tag Manager */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0SLHX7FC01"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0SLHX7FC01');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${poppins.className}  ${geistSans.variable} ${geistMono.variable} antialiased `}
         // ${geistSans.variable} ${geistMono.variable}
