@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { geistMono, geistSans, poppins } from "../../fonts/font";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 export const value = {
   appendTo: "self",
 };
