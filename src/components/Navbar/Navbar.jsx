@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/30 backdrop-blur-md border-b border-white/20 ">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+      <div className=" md:mx-8 px-4 py-2 flex justify-between items-center">
         <Image
           className="cursor-pointer bg-gray-100 p-1 rounded-md w-20"
           onClick={() => router.push("/")}
@@ -44,36 +44,52 @@ const Navbar = () => {
             </button>
           ))}
         </div>
-        {/* hamburger for mobile screen  */}
+        {/* hamburger menu for mobile screen  */}
         <div className="md:hidden">
           <button
             className="text-white cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? "": <Menu size={28} />}
           </button>
         </div>
       </div>
       {/* mobile menu */}
-
+      {isOpen && (
+        <div
+          className="fixed inset-0 h-screen backdrop-blur-md bg-black/60 z-30"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
       <div
-        className={`fixed top-13 left-0 h-screen w-xl rounded-md  bg-gray-800  max-w-[200px] backdrop-blur-md z-40 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 md:hidden left-0 h-screen w-64 bg-gray-900 z-40 transform transition-transform duration-300 ease-in-out 
+    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <div className="h-screen rounded-md shadow-md overflow-y-auto flex flex-col items-center justify-center">
-          <div className="flex flex-col gap-3 p-3 ">
-            {navLinks.map((value, index) => (
-              <button
-                className="text-white hover:text-customColor flex items-center gap-2"
-                key={index}
-                onClick={() => handleClick(value.path)}
-              >
-                <value.icon size={18} />
-                {value.name}
-              </button>
-            ))}
-          </div>
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between px-4 py-2 border-b border-gray-700">
+          <Image
+            className="cursor-pointer p-1 rounded-md w-20"
+            width={60}
+            height={60}
+            src="/logo/logo.png"
+            alt="Logo"
+            onClick={() => router.push("/")}
+          />
+          <X className="" onClick={() => setIsOpen(false)} size={28} />
+        </div>
+
+        {/* Sidebar Links */}
+        <div className="flex flex-col gap-3 p-4 items-start">
+          {navLinks.map((value, index) => (
+            <button
+              className="text-white hover:text-customColor flex items-center gap-3 text-left w-full"
+              key={index}
+              onClick={() => handleClick(value.path)}
+            >
+              <value.icon size={18} />
+              {value.name}
+            </button>
+          ))}
         </div>
       </div>
     </nav>
