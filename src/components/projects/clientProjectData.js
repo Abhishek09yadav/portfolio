@@ -31,7 +31,7 @@ export const clientProjectData = [
     startDate: "Dec 2024",
     endDate: "Mar 2025",
     github: "",
-    demo: "https://navkar-estore.in",
+    demo: "https://client-projects.onrender.com",
     status: "completed",
   },
   {
