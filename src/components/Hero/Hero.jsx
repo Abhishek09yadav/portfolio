@@ -47,15 +47,13 @@ const Hero = () => {
   return (
     <>
       {" "}
-      <div className="relative w-full h-screen bg-black overflow-hidden">
+      <div className="relative w-full h-dvh overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-80"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
         />
-
-        {/* Dark Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/40" />
 
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center min-h-screen text-white px-4 text-center">
@@ -93,7 +91,7 @@ const Hero = () => {
               Abhishek Here
             </h2>
             <p
-              // className={`text-base sm:text-lg md:text-2xl text-gray-300 typing-text ${styles.typingText}`}
+            // className={`text-base sm:text-lg md:text-2xl text-gray-300 typing-text ${styles.typingText}`}
             >
               {text}
               {/* <span className={`${styles.blinkingCursor}`}>|</span> */}
@@ -109,14 +107,13 @@ const Hero = () => {
           </main>
 
           <footer className="mt-10 animate-fade-up delay-700">
-            <a
-              href="#portfolio"
-              className="inline-flex items-center justify-center px-6 py-3 text-base md:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-transform duration-300 hover:scale-105 shadow-md"
-              onClick={() =>router.push('/projects')}
+            <button
+              onClick={() => router.push("/projects")}
+              className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300"
             >
               View My Work
-              <ArrowDown className="w-5 h-5 ml-2" />
-            </a>
+              <ArrowDown className="w-5 h-5" />
+            </button>
           </footer>
         </div>
       </div>

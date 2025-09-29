@@ -37,7 +37,7 @@ export default function MyTimeline() {
     },
     {
       status: "Full Stack Developer at JeeVijay",
-      date: "Nov 2024 – Present",
+      date: "Nov 2024 – Aug 2025",
       icon: "pi pi-briefcase",
       color: "#EC407A",
       details:
