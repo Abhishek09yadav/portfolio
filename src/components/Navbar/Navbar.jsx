@@ -23,50 +23,57 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/30 backdrop-blur-md border-b border-white/20 ">
-      <div className=" md:mx-8 px-4 py-2 flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-lg border-b border-white/10 shadow-lg">
+      <div className="md:mx-8 px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
         <Image
-          className="cursor-pointer bg-gray-100 p-1 rounded-md w-20"
+          className="cursor-pointer p-1 rounded-xl bg-white/10 hover:bg-white/20 transition duration-300 w-20"
           onClick={() => router.push("/")}
           width={100}
           height={100}
           src="/logo/logo.png"
           alt="Logo"
         />
-        <div className="hidden md:flex space-x-6">
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8">
           {navLinks.map((value, index) => (
             <button
               key={index}
-              className="text-white hover:text-gray-200 hover-underline-animation cursor-pointer transition duration-300 flex items-center gap-1"
+              className="text-white text-lg hover:text-customColorLight hover-underline-animation cursor-pointer transition-all duration-300 tracking-wide"
               onClick={() => handleClick(value.path)}
             >
               {value.name}
             </button>
           ))}
         </div>
-        {/* hamburger menu for mobile screen  */}
+
+        {/* Hamburger Menu */}
         <div className="md:hidden">
           <button
-            className="text-white cursor-pointer"
+            className="text-white hover:scale-110 transition-transform"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? "": <Menu size={28} />}
+            {isOpen ? "" : <Menu size={28} />}
           </button>
         </div>
       </div>
-      {/* mobile menu */}
+
+      {/* Overlay for mobile menu */}
       {isOpen && (
         <div
-          className="fixed inset-0 h-screen backdrop-blur-md bg-black/60 z-30"
+          className="fixed inset-0 h-screen backdrop-blur-sm bg-black/50 z-30"
           onClick={() => setIsOpen(false)}
         />
       )}
+
+      {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 md:hidden left-0 h-screen w-64 bg-gray-900 z-40 transform transition-transform duration-300 ease-in-out 
-    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-black via-gray-900 to-black shadow-xl z-40 transform transition-transform duration-300 ease-in-out rounded-r-2xl 
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between px-4 py-2 border-b border-gray-700">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700">
           <Image
             className="cursor-pointer p-1 rounded-md w-20"
             width={60}
@@ -75,18 +82,22 @@ const Navbar = () => {
             alt="Logo"
             onClick={() => router.push("/")}
           />
-          <X className="" onClick={() => setIsOpen(false)} size={28} />
+          <X
+            className="text-white cursor-pointer hover:text-customColorLight transition"
+            onClick={() => setIsOpen(false)}
+            size={28}
+          />
         </div>
 
         {/* Sidebar Links */}
-        <div className="flex flex-col gap-3 p-4 items-start">
+        <div className="flex flex-col gap-4 p-5">
           {navLinks.map((value, index) => (
             <button
-              className="text-white hover:text-customColor flex items-center gap-3 text-left w-full"
+              className="flex items-center gap-4 text-white text-lg hover:text-customColorLight transition-all duration-300 hover:translate-x-2"
               key={index}
               onClick={() => handleClick(value.path)}
             >
-              <value.icon size={18} />
+              <value.icon size={20} />
               {value.name}
             </button>
           ))}
